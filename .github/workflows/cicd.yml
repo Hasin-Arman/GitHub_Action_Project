@@ -37,8 +37,8 @@ jobs:
         uses: actions/setup-node@v4
       
       - name: build application
-        run : npm run build
+        run : |
+          echo "starting build"
+          npm build
+          echo "build complete"
       
-      - name: run the application
-        run : npm run dev    
-
