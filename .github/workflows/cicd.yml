@@ -2,8 +2,7 @@ name: CI/CD PIPELINE
 
 on:
   push:
-    branches:
-     -master
+    branches: [master]
 
 env:
   NODE_VERSION: '20'
