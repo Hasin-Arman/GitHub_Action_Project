@@ -1,2 +1,26 @@
 name: CI/CD PIPELINE
 
+on:
+  push:
+    branches:
+     -master
+
+env:
+  NODE_VERSION:'20'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      
+      - name: install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{NODE_VERSION}}
+
+      - name: test the application
+        run : npm run check
+      
+
